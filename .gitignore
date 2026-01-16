@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Database & Logs
+chroma_db/
+mlruns/
+.pytest_cache/
+
+# VS Code
+.vscode/

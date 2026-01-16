@@ -1,0 +1,28 @@
+import pandas as pd
+import numpy as np
+
+def generate_messy_data(n=200):
+    np.random.seed(42)
+    categories = ['Network', 'Hardware', 'Software', 'Access', 'Cloud']
+    priorities = ['Low', 'Medium', 'High', 'Critical']
+    
+    data = {
+        'ticket_id': [f'INC-{1000+i}' for i in range(n)],
+        'title': np.random.choice(['VPN Issue', 'Broken Screen', 'Password Reset', 'S3 Bucket Down', 'Slow WiFi'], n),
+        'description': [
+            f"User reports {c} failure. Error code: {np.random.randint(100, 999)}. [RE: Ticket #{np.random.randint(10, 99)}]" 
+            for c in np.random.choice(['system', 'auth', 'network'], n)
+        ],
+        'priority': np.random.choice(priorities, n, p=[0.4, 0.3, 0.2, 0.1]),
+        'category': np.random.choice(categories, n),
+        'resolution_time_hrs': np.random.gamma(shape=2, scale=5, size=n), # Realistic skewed distribution
+        'user_sentiment': np.random.choice(['Frustrated', 'Neutral', 'Angry'], n, p=[0.3, 0.5, 0.2])
+    }
+    
+    df = pd.DataFrame(data)
+    # Inject some "messy" data
+    df.iloc[0:5, 2] = np.nan  # Missing descriptions
+    df.to_csv('data/incidents_advanced.csv', index=False)
+    print("✅ Advanced dataset 'incidents_advanced.csv' generated.")
+
+generate_messy_data()

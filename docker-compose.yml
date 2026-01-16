@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+  ui:
+    build: .
+    command: streamlit run ui/streamlit_hitl.py
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api

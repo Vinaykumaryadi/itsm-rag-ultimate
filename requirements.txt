@@ -1,0 +1,22 @@
+# Core Frameworks
+langchain
+langchain-openai
+langchain-community
+langchain-huggingface
+langgraph
+
+# Vector DB & Embeddings
+chromadb
+sentence-transformers
+
+# API & UI
+fastapi
+uvicorn
+pydantic
+streamlit
+requests
+
+# MLOps & Utilities
+mlflow
+python-dotenv
+pandas
