@@ -1,0 +1,201 @@
+ticket_id,title,description,priority,category,resolution_time_hrs,user_sentiment
+INC-1000,S3 Bucket Down,User reports auth failure. Error code: 769. [RE: Ticket #28],Critical,Cloud,1.6195576564222227,Angry
+INC-1001,Slow WiFi,User reports auth failure. Error code: 756. [RE: Ticket #72],Low,Access,12.427295959043088,Frustrated
+INC-1002,Password Reset,User reports auth failure. Error code: 886. [RE: Ticket #67],Medium,Cloud,5.6570185627968534,Frustrated
+INC-1003,Slow WiFi,User reports network failure. Error code: 445. [RE: Ticket #71],Medium,Cloud,12.218458849999777,Neutral
+INC-1004,Slow WiFi,User reports network failure. Error code: 890. [RE: Ticket #18],High,Cloud,23.781170920699584,Angry
+INC-1005,Broken Screen,User reports system failure. Error code: 740. [RE: Ticket #67],Medium,Access,23.137225379743516,Neutral
+INC-1006,Password Reset,User reports system failure. Error code: 733. [RE: Ticket #10],High,Access,7.353885860318407,Neutral
+INC-1007,Password Reset,User reports network failure. Error code: 850. [RE: Ticket #43],High,Cloud,14.699465580152658,Frustrated
+INC-1008,Password Reset,User reports auth failure. Error code: 195. [RE: Ticket #57],Low,Hardware,6.2827276950105295,Frustrated
+INC-1009,Slow WiFi,User reports system failure. Error code: 700. [RE: Ticket #10],Low,Software,9.681854007497106,Angry
+INC-1010,S3 Bucket Down,User reports network failure. Error code: 371. [RE: Ticket #70],Medium,Software,1.8591448357634708,Angry
+INC-1011,Password Reset,User reports network failure. Error code: 803. [RE: Ticket #72],Low,Software,4.168925458660626,Frustrated
+INC-1012,Slow WiFi,User reports network failure. Error code: 680. [RE: Ticket #31],Low,Access,12.614460875181274,Angry
+INC-1013,Broken Screen,User reports auth failure. Error code: 960. [RE: Ticket #76],Medium,Access,1.3656096413090026,Neutral
+INC-1014,S3 Bucket Down,User reports network failure. Error code: 175. [RE: Ticket #35],Low,Hardware,8.963894158783047,Angry
+INC-1015,Broken Screen,User reports network failure. Error code: 755. [RE: Ticket #60],Medium,Software,9.543257716294953,Neutral
+INC-1016,S3 Bucket Down,User reports network failure. Error code: 185. [RE: Ticket #66],Medium,Software,12.902560702799665,Neutral
+INC-1017,Slow WiFi,User reports network failure. Error code: 384. [RE: Ticket #87],Medium,Cloud,1.8706494152681106,Neutral
+INC-1018,VPN Issue,User reports system failure. Error code: 319. [RE: Ticket #78],Medium,Access,1.4931291344452615,Neutral
+INC-1019,S3 Bucket Down,User reports system failure. Error code: 146. [RE: Ticket #71],Medium,Software,16.467169963370996,Frustrated
+INC-1020,Broken Screen,User reports network failure. Error code: 552. [RE: Ticket #85],Low,Hardware,9.548972221404927,Frustrated
+INC-1021,Slow WiFi,User reports auth failure. Error code: 317. [RE: Ticket #57],Medium,Hardware,6.353362256651909,Neutral
+INC-1022,S3 Bucket Down,User reports system failure. Error code: 440. [RE: Ticket #48],Medium,Software,1.7797225949960258,Neutral
+INC-1023,VPN Issue,User reports network failure. Error code: 711. [RE: Ticket #42],High,Access,6.006851467949438,Frustrated
+INC-1024,VPN Issue,User reports system failure. Error code: 353. [RE: Ticket #32],Medium,Hardware,3.0992181924077853,Neutral
+INC-1025,Password Reset,User reports system failure. Error code: 861. [RE: Ticket #19],Critical,Cloud,15.888200884845245,Angry
+INC-1026,Password Reset,User reports auth failure. Error code: 857. [RE: Ticket #78],Medium,Hardware,2.388683254235635,Frustrated
+INC-1027,Broken Screen,User reports network failure. Error code: 199. [RE: Ticket #43],Low,Network,6.956577029890529,Neutral
+INC-1028,S3 Bucket Down,User reports network failure. Error code: 279. [RE: Ticket #19],High,Network,14.79489925540178,Neutral
+INC-1029,S3 Bucket Down,User reports auth failure. Error code: 861. [RE: Ticket #28],Low,Access,12.998649298835069,Angry
+INC-1030,Password Reset,User reports auth failure. Error code: 541. [RE: Ticket #10],Low,Software,5.734165916959953,Frustrated
+INC-1031,S3 Bucket Down,User reports network failure. Error code: 424. [RE: Ticket #13],Low,Access,13.123018339535296,Neutral
+INC-1032,S3 Bucket Down,User reports network failure. Error code: 115. [RE: Ticket #33],Medium,Access,14.811811041981635,Angry
+INC-1033,VPN Issue,User reports auth failure. Error code: 435. [RE: Ticket #11],Medium,Access,9.227518848876167,Angry
+INC-1034,Password Reset,User reports system failure. Error code: 596. [RE: Ticket #41],Low,Access,11.561639498467905,Neutral
+INC-1035,Slow WiFi,User reports system failure. Error code: 574. [RE: Ticket #93],High,Cloud,7.0310830687795525,Neutral
+INC-1036,Password Reset,User reports auth failure. Error code: 763. [RE: Ticket #21],Low,Cloud,17.952571959620183,Neutral
+INC-1037,Slow WiFi,User reports system failure. Error code: 789. [RE: Ticket #44],Low,Hardware,7.824954979563903,Angry
+INC-1038,VPN Issue,User reports auth failure. Error code: 479. [RE: Ticket #42],Low,Network,2.155877657340638,Neutral
+INC-1039,Broken Screen,User reports system failure. Error code: 790. [RE: Ticket #52],Low,Access,12.003922222851154,Frustrated
+INC-1040,S3 Bucket Down,User reports system failure. Error code: 712. [RE: Ticket #21],Medium,Hardware,3.252899454629259,Angry
+INC-1041,VPN Issue,User reports network failure. Error code: 934. [RE: Ticket #74],Medium,Network,19.603508023576463,Neutral
+INC-1042,S3 Bucket Down,User reports network failure. Error code: 516. [RE: Ticket #49],Medium,Software,11.290227745270807,Neutral
+INC-1043,Broken Screen,User reports system failure. Error code: 941. [RE: Ticket #52],Low,Cloud,1.0526901984239292,Frustrated
+INC-1044,Broken Screen,User reports system failure. Error code: 655. [RE: Ticket #38],Low,Network,15.283491461393126,Neutral
+INC-1045,VPN Issue,User reports network failure. Error code: 496. [RE: Ticket #21],Low,Software,10.297062703301654,Neutral
+INC-1046,Broken Screen,User reports network failure. Error code: 706. [RE: Ticket #55],High,Network,13.838620646282054,Neutral
+INC-1047,Slow WiFi,User reports network failure. Error code: 997. [RE: Ticket #44],Low,Cloud,8.640527412042797,Frustrated
+INC-1048,Broken Screen,User reports auth failure. Error code: 826. [RE: Ticket #90],Medium,Cloud,18.984954974520353,Neutral
+INC-1049,S3 Bucket Down,User reports system failure. Error code: 189. [RE: Ticket #17],Critical,Hardware,4.65447545977192,Angry
+INC-1050,S3 Bucket Down,User reports network failure. Error code: 704. [RE: Ticket #35],Medium,Access,15.792567300295023,Frustrated
+INC-1051,S3 Bucket Down,User reports system failure. Error code: 701. [RE: Ticket #43],Critical,Network,10.52792086001175,Angry
+INC-1052,S3 Bucket Down,User reports auth failure. Error code: 214. [RE: Ticket #16],Low,Network,1.509058011470531,Neutral
+INC-1053,Slow WiFi,User reports auth failure. Error code: 295. [RE: Ticket #67],High,Software,1.3559187612417283,Angry
+INC-1054,Password Reset,User reports network failure. Error code: 600. [RE: Ticket #84],Medium,Cloud,6.5409884625248305,Neutral
+INC-1055,VPN Issue,User reports auth failure. Error code: 512. [RE: Ticket #45],High,Network,4.143156573749051,Neutral
+INC-1056,S3 Bucket Down,User reports system failure. Error code: 828. [RE: Ticket #30],Low,Cloud,1.0462133252824364,Neutral
+INC-1057,Broken Screen,User reports network failure. Error code: 860. [RE: Ticket #45],Low,Network,2.7168189758563828,Angry
+INC-1058,S3 Bucket Down,User reports system failure. Error code: 493. [RE: Ticket #82],Low,Hardware,7.30871629980009,Neutral
+INC-1059,Broken Screen,User reports system failure. Error code: 291. [RE: Ticket #58],Medium,Access,4.059472606006348,Neutral
+INC-1060,Broken Screen,User reports auth failure. Error code: 198. [RE: Ticket #45],High,Network,33.901403102714276,Neutral
+INC-1061,S3 Bucket Down,User reports auth failure. Error code: 195. [RE: Ticket #33],High,Cloud,4.740521369396775,Angry
+INC-1062,Slow WiFi,User reports auth failure. Error code: 762. [RE: Ticket #71],Low,Hardware,18.365204709836465,Neutral
+INC-1063,Broken Screen,User reports auth failure. Error code: 835. [RE: Ticket #46],High,Network,23.78864060757695,Neutral
+INC-1064,Broken Screen,User reports auth failure. Error code: 879. [RE: Ticket #64],Low,Software,5.4191860609182765,Neutral
+INC-1065,S3 Bucket Down,User reports network failure. Error code: 624. [RE: Ticket #32],Low,Access,5.034326165265065,Angry
+INC-1066,Broken Screen,User reports system failure. Error code: 316. [RE: Ticket #39],Low,Network,5.524342093464431,Frustrated
+INC-1067,Broken Screen,User reports system failure. Error code: 372. [RE: Ticket #71],High,Hardware,7.294579157591973,Neutral
+INC-1068,S3 Bucket Down,User reports system failure. Error code: 695. [RE: Ticket #98],Low,Software,6.147961811545071,Frustrated
+INC-1069,S3 Bucket Down,User reports system failure. Error code: 441. [RE: Ticket #22],Medium,Hardware,2.8215642087995922,Neutral
+INC-1070,VPN Issue,User reports auth failure. Error code: 798. [RE: Ticket #28],High,Hardware,10.753991200007704,Neutral
+INC-1071,Slow WiFi,User reports system failure. Error code: 276. [RE: Ticket #21],Low,Software,6.131357484946939,Neutral
+INC-1072,Slow WiFi,User reports network failure. Error code: 544. [RE: Ticket #28],Medium,Hardware,34.69135233442596,Neutral
+INC-1073,Broken Screen,User reports network failure. Error code: 175. [RE: Ticket #18],Low,Software,15.97127674293706,Neutral
+INC-1074,Slow WiFi,User reports system failure. Error code: 554. [RE: Ticket #37],Low,Network,6.205397655752614,Neutral
+INC-1075,Broken Screen,User reports system failure. Error code: 817. [RE: Ticket #61],Medium,Software,12.698328069864043,Frustrated
+INC-1076,VPN Issue,User reports network failure. Error code: 950. [RE: Ticket #25],Low,Software,12.356952921453644,Neutral
+INC-1077,S3 Bucket Down,User reports network failure. Error code: 984. [RE: Ticket #78],Medium,Access,17.4675358404745,Frustrated
+INC-1078,S3 Bucket Down,User reports auth failure. Error code: 198. [RE: Ticket #21],Medium,Software,1.3753494039940048,Frustrated
+INC-1079,S3 Bucket Down,User reports network failure. Error code: 124. [RE: Ticket #61],Medium,Software,2.5669493133929033,Neutral
+INC-1080,Slow WiFi,User reports auth failure. Error code: 990. [RE: Ticket #94],High,Network,3.9985404152915742,Neutral
+INC-1081,VPN Issue,User reports auth failure. Error code: 583. [RE: Ticket #62],Medium,Access,8.28001272137438,Neutral
+INC-1082,Slow WiFi,User reports auth failure. Error code: 250. [RE: Ticket #25],Medium,Cloud,3.8836830213178235,Neutral
+INC-1083,Slow WiFi,User reports auth failure. Error code: 668. [RE: Ticket #48],Medium,Network,20.132812721324566,Neutral
+INC-1084,VPN Issue,User reports auth failure. Error code: 208. [RE: Ticket #62],Low,Network,2.9545302911337537,Angry
+INC-1085,VPN Issue,User reports system failure. Error code: 141. [RE: Ticket #67],Low,Cloud,9.980675165079646,Neutral
+INC-1086,VPN Issue,User reports network failure. Error code: 497. [RE: Ticket #14],High,Software,10.46537583674828,Neutral
+INC-1087,VPN Issue,User reports auth failure. Error code: 262. [RE: Ticket #96],Medium,Hardware,11.235365675840807,Frustrated
+INC-1088,S3 Bucket Down,User reports network failure. Error code: 832. [RE: Ticket #84],Low,Access,13.853176118065528,Neutral
+INC-1089,Password Reset,User reports network failure. Error code: 757. [RE: Ticket #85],Medium,Hardware,16.685639627328968,Neutral
+INC-1090,Password Reset,User reports auth failure. Error code: 108. [RE: Ticket #83],Low,Cloud,22.64591789923175,Neutral
+INC-1091,VPN Issue,User reports system failure. Error code: 591. [RE: Ticket #26],Critical,Network,6.1641870027981565,Neutral
+INC-1092,Password Reset,User reports auth failure. Error code: 352. [RE: Ticket #16],Low,Network,4.027688588457176,Neutral
+INC-1093,Password Reset,User reports system failure. Error code: 273. [RE: Ticket #22],Low,Access,11.335195999341586,Neutral
+INC-1094,VPN Issue,User reports network failure. Error code: 267. [RE: Ticket #51],Low,Network,11.1944069937,Neutral
+INC-1095,Password Reset,User reports system failure. Error code: 492. [RE: Ticket #59],Medium,Network,14.804878588522897,Angry
+INC-1096,Slow WiFi,User reports system failure. Error code: 894. [RE: Ticket #75],High,Access,1.9425700392502248,Neutral
+INC-1097,Broken Screen,User reports system failure. Error code: 616. [RE: Ticket #38],Low,Access,14.202989080944617,Angry
+INC-1098,Broken Screen,User reports network failure. Error code: 264. [RE: Ticket #47],High,Cloud,2.303014801184363,Frustrated
+INC-1099,VPN Issue,User reports network failure. Error code: 438. [RE: Ticket #17],Low,Network,10.17526282820192,Frustrated
+INC-1100,S3 Bucket Down,User reports system failure. Error code: 595. [RE: Ticket #74],High,Network,6.001671923050035,Frustrated
+INC-1101,VPN Issue,User reports system failure. Error code: 441. [RE: Ticket #26],Low,Cloud,18.826819066788424,Neutral
+INC-1102,S3 Bucket Down,User reports auth failure. Error code: 610. [RE: Ticket #80],Low,Software,2.0620483559685123,Angry
+INC-1103,Broken Screen,User reports system failure. Error code: 316. [RE: Ticket #54],Medium,Software,9.518613341918803,Frustrated
+INC-1104,VPN Issue,User reports auth failure. Error code: 231. [RE: Ticket #45],Critical,Software,11.258185501830853,Angry
+INC-1105,Slow WiFi,User reports system failure. Error code: 169. [RE: Ticket #40],High,Cloud,6.203158678476408,Frustrated
+INC-1106,Password Reset,User reports auth failure. Error code: 886. [RE: Ticket #70],Medium,Network,9.51222045212432,Angry
+INC-1107,S3 Bucket Down,User reports network failure. Error code: 975. [RE: Ticket #63],Critical,Cloud,5.602429653500172,Neutral
+INC-1108,Password Reset,User reports system failure. Error code: 266. [RE: Ticket #83],Low,Cloud,9.185818181154504,Frustrated
+INC-1109,Password Reset,User reports system failure. Error code: 957. [RE: Ticket #28],Critical,Software,10.93467154783103,Neutral
+INC-1110,VPN Issue,User reports system failure. Error code: 138. [RE: Ticket #76],Medium,Hardware,5.379207217707037,Frustrated
+INC-1111,Password Reset,User reports system failure. Error code: 272. [RE: Ticket #22],High,Network,7.5157797349866495,Frustrated
+INC-1112,Slow WiFi,User reports auth failure. Error code: 853. [RE: Ticket #67],High,Software,0.8902997917435485,Neutral
+INC-1113,Password Reset,User reports system failure. Error code: 759. [RE: Ticket #81],High,Hardware,5.975192439829106,Angry
+INC-1114,VPN Issue,User reports network failure. Error code: 928. [RE: Ticket #48],Medium,Hardware,2.648680259527908,Neutral
+INC-1115,Slow WiFi,User reports network failure. Error code: 100. [RE: Ticket #12],Medium,Access,7.237871742528906,Neutral
+INC-1116,Broken Screen,User reports system failure. Error code: 447. [RE: Ticket #71],High,Network,17.874985769102118,Neutral
+INC-1117,Password Reset,User reports network failure. Error code: 604. [RE: Ticket #72],Low,Hardware,19.978275761347106,Neutral
+INC-1118,VPN Issue,User reports system failure. Error code: 607. [RE: Ticket #34],Critical,Software,6.97853256531179,Frustrated
+INC-1119,Broken Screen,User reports system failure. Error code: 923. [RE: Ticket #42],High,Access,2.905836893744183,Neutral
+INC-1120,Broken Screen,User reports network failure. Error code: 216. [RE: Ticket #15],Low,Network,2.6565332869526377,Frustrated
+INC-1121,S3 Bucket Down,User reports system failure. Error code: 157. [RE: Ticket #53],High,Cloud,15.576688262475226,Frustrated
+INC-1122,Slow WiFi,User reports network failure. Error code: 784. [RE: Ticket #41],Medium,Software,7.069800307647011,Neutral
+INC-1123,Password Reset,User reports auth failure. Error code: 272. [RE: Ticket #70],High,Hardware,8.821568601511627,Frustrated
+INC-1124,VPN Issue,User reports system failure. Error code: 914. [RE: Ticket #30],High,Hardware,6.938523440108334,Neutral
+INC-1125,S3 Bucket Down,User reports auth failure. Error code: 179. [RE: Ticket #94],Low,Software,12.0407492068191,Neutral
+INC-1126,Slow WiFi,User reports network failure. Error code: 302. [RE: Ticket #45],Medium,Hardware,8.148014952370344,Frustrated
+INC-1127,S3 Bucket Down,User reports auth failure. Error code: 326. [RE: Ticket #28],Critical,Access,13.787232469460458,Neutral
+INC-1128,Slow WiFi,User reports auth failure. Error code: 631. [RE: Ticket #66],Low,Network,13.921525216671295,Frustrated
+INC-1129,Slow WiFi,User reports network failure. Error code: 501. [RE: Ticket #56],Medium,Access,3.603035331237354,Angry
+INC-1130,Password Reset,User reports auth failure. Error code: 332. [RE: Ticket #58],Low,Hardware,10.598866983447348,Neutral
+INC-1131,Slow WiFi,User reports auth failure. Error code: 625. [RE: Ticket #24],Medium,Cloud,19.277365171662765,Angry
+INC-1132,S3 Bucket Down,User reports network failure. Error code: 514. [RE: Ticket #10],Medium,Network,11.924821817441309,Neutral
+INC-1133,Slow WiFi,User reports auth failure. Error code: 472. [RE: Ticket #63],Medium,Network,10.995716026651156,Frustrated
+INC-1134,Password Reset,User reports network failure. Error code: 985. [RE: Ticket #12],Low,Software,4.338106289211399,Neutral
+INC-1135,Password Reset,User reports auth failure. Error code: 755. [RE: Ticket #96],Medium,Software,4.4076785382929415,Angry
+INC-1136,S3 Bucket Down,User reports network failure. Error code: 111. [RE: Ticket #83],Low,Cloud,8.241437907857168,Neutral
+INC-1137,Broken Screen,User reports network failure. Error code: 835. [RE: Ticket #25],Low,Network,4.8715213674198585,Angry
+INC-1138,Broken Screen,User reports auth failure. Error code: 457. [RE: Ticket #85],Low,Cloud,16.555047545824355,Angry
+INC-1139,Slow WiFi,User reports auth failure. Error code: 507. [RE: Ticket #37],Low,Software,7.265556615380607,Frustrated
+INC-1140,VPN Issue,User reports auth failure. Error code: 472. [RE: Ticket #17],Medium,Software,4.63380801741517,Frustrated
+INC-1141,Slow WiFi,User reports system failure. Error code: 221. [RE: Ticket #45],Medium,Network,16.83993602863564,Neutral
+INC-1142,S3 Bucket Down,User reports system failure. Error code: 189. [RE: Ticket #17],High,Access,3.0797371309638386,Neutral
+INC-1143,S3 Bucket Down,User reports system failure. Error code: 797. [RE: Ticket #69],Low,Hardware,8.178243800438953,Angry
+INC-1144,S3 Bucket Down,User reports network failure. Error code: 277. [RE: Ticket #37],High,Software,5.164218851700612,Angry
+INC-1145,S3 Bucket Down,User reports auth failure. Error code: 831. [RE: Ticket #50],High,Software,35.442557687518985,Neutral
+INC-1146,S3 Bucket Down,User reports network failure. Error code: 839. [RE: Ticket #73],Medium,Access,8.188280861289892,Frustrated
+INC-1147,Password Reset,User reports system failure. Error code: 601. [RE: Ticket #72],Critical,Access,3.860080056729826,Neutral
+INC-1148,Broken Screen,User reports auth failure. Error code: 244. [RE: Ticket #82],Critical,Cloud,8.578800576861155,Frustrated
+INC-1149,S3 Bucket Down,User reports network failure. Error code: 823. [RE: Ticket #86],Low,Cloud,7.230401997593424,Angry
+INC-1150,VPN Issue,User reports auth failure. Error code: 831. [RE: Ticket #38],Low,Hardware,4.445593518491897,Neutral
+INC-1151,VPN Issue,User reports network failure. Error code: 657. [RE: Ticket #44],Critical,Hardware,16.48507177708559,Neutral
+INC-1152,VPN Issue,User reports auth failure. Error code: 352. [RE: Ticket #15],High,Network,13.03904314115256,Frustrated
+INC-1153,VPN Issue,User reports system failure. Error code: 693. [RE: Ticket #78],Low,Cloud,10.241256312609575,Neutral
+INC-1154,Password Reset,User reports system failure. Error code: 914. [RE: Ticket #34],High,Software,4.1684931908476495,Neutral
+INC-1155,VPN Issue,User reports auth failure. Error code: 549. [RE: Ticket #19],High,Cloud,26.35511408895839,Neutral
+INC-1156,S3 Bucket Down,User reports network failure. Error code: 923. [RE: Ticket #39],High,Software,10.863829519165497,Frustrated
+INC-1157,Slow WiFi,User reports system failure. Error code: 341. [RE: Ticket #14],High,Access,5.124633473992634,Neutral
+INC-1158,VPN Issue,User reports system failure. Error code: 218. [RE: Ticket #42],High,Cloud,17.524691975774765,Angry
+INC-1159,Password Reset,User reports system failure. Error code: 473. [RE: Ticket #74],Low,Access,9.094721701741035,Frustrated
+INC-1160,Password Reset,User reports auth failure. Error code: 245. [RE: Ticket #58],Low,Hardware,16.094164993737156,Frustrated
+INC-1161,VPN Issue,User reports auth failure. Error code: 878. [RE: Ticket #94],Medium,Hardware,11.201729713086612,Frustrated
+INC-1162,Slow WiFi,User reports network failure. Error code: 381. [RE: Ticket #72],Critical,Network,31.851494812357323,Neutral
+INC-1163,VPN Issue,User reports network failure. Error code: 316. [RE: Ticket #95],Low,Cloud,3.2906542181472895,Neutral
+INC-1164,Password Reset,User reports network failure. Error code: 926. [RE: Ticket #36],Medium,Access,5.3623848385871025,Neutral
+INC-1165,Broken Screen,User reports auth failure. Error code: 788. [RE: Ticket #86],Medium,Software,45.86358024155374,Frustrated
+INC-1166,S3 Bucket Down,User reports auth failure. Error code: 709. [RE: Ticket #10],Medium,Hardware,7.725028911972199,Neutral
+INC-1167,Password Reset,User reports network failure. Error code: 504. [RE: Ticket #64],High,Hardware,2.96744728658273,Neutral
+INC-1168,VPN Issue,User reports network failure. Error code: 617. [RE: Ticket #90],High,Software,12.532182521925112,Neutral
+INC-1169,S3 Bucket Down,User reports auth failure. Error code: 808. [RE: Ticket #14],Medium,Access,17.54627424573194,Angry
+INC-1170,VPN Issue,User reports network failure. Error code: 969. [RE: Ticket #12],Medium,Access,7.63879384113575,Frustrated
+INC-1171,VPN Issue,User reports system failure. Error code: 536. [RE: Ticket #32],Medium,Cloud,1.1625077365254053,Neutral
+INC-1172,Broken Screen,User reports auth failure. Error code: 664. [RE: Ticket #46],Medium,Cloud,3.7632025385556984,Neutral
+INC-1173,S3 Bucket Down,User reports network failure. Error code: 813. [RE: Ticket #83],Low,Network,1.7708476345875228,Neutral
+INC-1174,S3 Bucket Down,User reports auth failure. Error code: 182. [RE: Ticket #26],Low,Hardware,29.08328648727104,Neutral
+INC-1175,Broken Screen,User reports system failure. Error code: 184. [RE: Ticket #87],Medium,Cloud,1.6122930778845106,Neutral
+INC-1176,Password Reset,User reports auth failure. Error code: 556. [RE: Ticket #10],Low,Access,5.155948088886312,Angry
+INC-1177,VPN Issue,User reports auth failure. Error code: 150. [RE: Ticket #54],Low,Software,12.267864986507815,Frustrated
+INC-1178,Slow WiFi,User reports auth failure. Error code: 816. [RE: Ticket #13],Medium,Access,2.577362299366492,Frustrated
+INC-1179,VPN Issue,User reports auth failure. Error code: 545. [RE: Ticket #74],Medium,Hardware,11.203946016132011,Neutral
+INC-1180,VPN Issue,User reports system failure. Error code: 980. [RE: Ticket #41],Low,Access,4.644944832771361,Neutral
+INC-1181,Password Reset,User reports auth failure. Error code: 133. [RE: Ticket #81],High,Network,10.603068193960317,Frustrated
+INC-1182,VPN Issue,User reports auth failure. Error code: 650. [RE: Ticket #35],Medium,Hardware,6.589831636689457,Frustrated
+INC-1183,Broken Screen,User reports network failure. Error code: 349. [RE: Ticket #43],Low,Software,7.362031401836363,Frustrated
+INC-1184,Broken Screen,User reports auth failure. Error code: 537. [RE: Ticket #12],High,Network,17.244274910549915,Angry
+INC-1185,S3 Bucket Down,User reports network failure. Error code: 990. [RE: Ticket #59],Medium,Hardware,2.87839183042041,Frustrated
+INC-1186,Slow WiFi,User reports system failure. Error code: 367. [RE: Ticket #74],High,Software,10.568416609925755,Neutral
+INC-1187,VPN Issue,User reports system failure. Error code: 153. [RE: Ticket #14],Medium,Network,14.706061917371168,Frustrated
+INC-1188,VPN Issue,User reports system failure. Error code: 833. [RE: Ticket #66],Critical,Network,2.601176637290022,Neutral
+INC-1189,Password Reset,User reports system failure. Error code: 500. [RE: Ticket #56],High,Hardware,1.784463180923443,Frustrated
+INC-1190,Broken Screen,User reports network failure. Error code: 306. [RE: Ticket #94],High,Cloud,6.695791607483309,Neutral
+INC-1191,Slow WiFi,User reports auth failure. Error code: 677. [RE: Ticket #84],High,Network,10.084048152989595,Frustrated
+INC-1192,S3 Bucket Down,User reports system failure. Error code: 534. [RE: Ticket #47],Low,Network,13.263156808696206,Angry
+INC-1193,Broken Screen,User reports auth failure. Error code: 803. [RE: Ticket #47],Low,Software,2.190560922597366,Frustrated
+INC-1194,S3 Bucket Down,User reports network failure. Error code: 405. [RE: Ticket #91],High,Access,15.084296959435306,Neutral
+INC-1195,Password Reset,User reports network failure. Error code: 897. [RE: Ticket #88],Medium,Hardware,18.977467607854603,Angry
+INC-1196,Password Reset,User reports network failure. Error code: 958. [RE: Ticket #60],High,Hardware,10.900305526616492,Neutral
+INC-1197,VPN Issue,User reports system failure. Error code: 546. [RE: Ticket #61],Low,Cloud,19.842086707543615,Neutral
+INC-1198,Slow WiFi,User reports auth failure. Error code: 348. [RE: Ticket #47],Medium,Cloud,6.396401905212197,Neutral
+INC-1199,S3 Bucket Down,User reports auth failure. Error code: 580. [RE: Ticket #97],Low,Hardware,5.2588958207093395,Neutral
