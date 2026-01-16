@@ -1,94 +1,73 @@
-🚀 Agentic RAG for ITSM Automation
-A production-grade IT Service Management (ITSM) automation engine using LangGraph, FastAPI, and ChromaDB.
+# 🚀 Agentic RAG for ITSM Automation
 
-This project demonstrates a multi-agent approach to resolving IT tickets. Unlike standard RAG, which simply retrieves and summarizes, this system uses a Supervisor Agent to determine the risk level of a ticket and routes it between automated resolution and Human-in-the-Loop (HITL) oversight.
+**A production-grade IT Service Management (ITSM) automation engine using LangGraph, FastAPI, and ChromaDB.**
 
-🏗️ System Architecture
-1. Ingestion & Chunking
-Multi-source Loaders: Handles CSV ticket exports and PDF documentation using Unstructured.
+This project demonstrates a sophisticated multi-agent approach to resolving IT tickets. Unlike standard linear RAG pipelines, this system uses a **Supervisor Agent** to analyze risk and route tickets between **Automated Resolution**, **Semantic Search**, and **Human-in-the-Loop (HITL)** oversight.
 
-Recursive Splitting: Maintains semantic context by splitting documents based on structural boundaries.
+---
 
-2. Hybrid Retrieval Engine
-Vector Store: ChromaDB with all-MiniLM-L6-v2 embeddings for semantic similarity.
+## 🏗️ System Architecture
 
-Keyword Search: BM25 integration to ensure specific error codes and IDs are never missed.
+![System Workflow](docs/plots/preprocessing_impact.png)
 
-3. Agentic Orchestration (LangGraph)
-The Supervisor: Analyzes the user's intent. If a ticket is flagged as "High Priority" or "Security Related," the agent halts automation.
+### 1. Data Engineering & EDA
+* **Automated Cleaning:** Custom pipeline to strip noise (RE: tags, HTML, headers) from messy human-written tickets.
+* **Exploratory Analysis:** Statistical profiling of ticket distributions and resolution bottlenecks.
 
-The Retriever Agent: Fetches solutions and generates a resolution plan only for safe, standard requests.
+### 2. Hybrid Retrieval Engine
+* **Vector Store:** ChromaDB utilizing `all-MiniLM-L6-v2` embeddings for deep semantic understanding.
+* **Metadata Filtering:** Enhanced retrieval narrowed by ticket category to reduce search space.
 
-🛠️ Tech Stack
-Orchestration: LangChain, LangGraph
+### 3. Agentic Orchestration (LangGraph)
+* **The Supervisor:** Acts as the "Brain," classifying incoming tickets by risk. 
+* **Retriever Agent:** Executes vector search and synthesizes a solution using RAG.
+* **Human-in-the-Loop Node:** A safety-first node that intercepts high-priority requests.
 
-LLMs: OpenAI GPT-4o / Anthropic Claude 3.5
+![Category Distribution](docs/plots/category_dist.png)
 
-Vector Database: ChromaDB
+---
 
-Backend: FastAPI (Model Context Protocol ready)
+## 🛠️ Tech Stack
 
-Frontend: Streamlit (Human-in-the-Loop Dashboard)
+| Category | Technology |
+| :--- | :--- |
+| **Orchestration** | **LangChain, LangGraph** |
+| **LLMs** | **OpenAI GPT-4o / Claude 3.5** |
+| **Vector DB** | **ChromaDB** |
+| **Data Science** | **Pandas, Matplotlib, Seaborn** |
+| **Backend** | **FastAPI** |
+| **Frontend** | **Streamlit** |
+| **Observability** | **MLflow** |
 
-Observability: MLflow (Tracking confidence and latency)
+---
 
-🚀 Getting Started
-Prerequisites
-Python 3.10+
+## 📊 Evaluation & Monitoring
 
-OpenAI API Key (or local LLM via Ollama)
+![Resolution Trends](docs/plots/resolution_trends.png)
 
-Docker (Optional)
+We utilize **MLflow** to track the lifecycle of every agentic decision:
+* **Confidence Scores:** Monitored to prevent "hallucinated" resolutions.
+* **Latency Tracking:** Measuring the overhead of multi-agent reasoning.
+* **Resolution Trends:** Visualized via Seaborn to identify common "unresolvable" clusters.
 
-Installation
-Clone the repo:
+---
 
-Bash
+## 🛡️ Technical Challenges & Decisions
 
-git clone https://github.com/your-username/itsm-rag-ultimate.git
-cd itsm-rag-ultimate
-Install dependencies:
+### **Why LangGraph instead of a simple Chain?**
+Standard chains are linear. In ITSM, we need **cycles**. LangGraph allows the agent to loop and self-correct if the first retrieval is insufficient.
 
-Bash
+### **Ensuring Safety (HITL)**
+Any ticket tagged as **"Security"** or **"Critical"** bypasses automation entirely and is routed to a human, ensuring 0% automation risk for mission-critical infrastructure.
 
-pip install -r requirements.txt
-Set environment variables: Create a .env file:
+---
 
-Plaintext
+## 🚀 Getting Started
 
-OPENAI_API_KEY=your_sk_...
-Running the Project
-Start the Backend: uvicorn api.fastapi_app:app --reload
+1. **Install:** `pip install -r requirements.txt`
+2. **Setup Data:** `python generate_all.py && python research/eda_report.py`
+3. **Run API:** `uvicorn api.fastapi_app:app --reload`
+4. **Run UI:** `streamlit run ui/streamlit_hitl.py`
 
-Start the UI: streamlit run ui/streamlit_hitl.py
-
-Start MLflow: mlflow ui
-
-🧹 Data Engineering & EDA
-This project includes a robust preprocessing pipeline to improve RAG performance:
-
-Noise Reduction: Automated cleaning of ticket metadata and special characters.
-
-Feature Engineering: Merging logical fields to create dense context for the Vector Store.
-
-EDA: Insightful analysis of incident categories and resolution bottlenecks (see /research).
-
-📊 Evaluation & Monitoring
-We use MLflow to track every agentic decision. Key metrics monitored include:
-
-Confidence Score: The agent's self-reported certainty in a resolution.
-
-Auto-Resolution Rate: Percentage of tickets handled without human intervention.
-
-Retrieval Precision: How relevant the fetched context was to the specific error code.
-
-🛡️ Technical Challenges & Decisions
-Q: Why LangGraph instead of a simple Chain?
-A: Standard RAG chains are linear. In ITSM, we need cycles. If a retrieved solution doesn't work, the agent needs to loop back, search again, or escalate. LangGraph allows for the stateful, cyclic logic required for real-world reliability.
-
-Q: How do we prevent hallucinations?
-A: We implemented a "Confidence Threshold." If the LLM's confidence score in the retrieved solution is below 0.8, the graph automatically routes the state to the human_review_node, ensuring an agent never sends bad advice to a user.
-
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
-
+---
+MIT License | © 2026 Vinay Kumar
