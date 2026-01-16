@@ -1,5 +1,10 @@
 # 🚀 Agentic RAG for ITSM Automation
 
+![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Framework](https://img.shields.io/badge/Framework-LangGraph-orange)
+![Linter](https://img.shields.io/badge/Code%20Style-Black-000000)
+
 **A production-grade IT Service Management (ITSM) automation engine using LangGraph, FastAPI, and ChromaDB.**
 
 This project demonstrates a sophisticated multi-agent approach to resolving IT tickets. Unlike standard linear RAG pipelines, this system uses a **Supervisor Agent** to analyze risk and route tickets between **Automated Resolution**, **Semantic Search**, and **Human-in-the-Loop (HITL)** oversight.
