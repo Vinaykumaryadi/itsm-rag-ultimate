@@ -1,70 +1,51 @@
-from typing import Annotated, List, TypedDict, Literal
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import BaseMessage, HumanMessage
-from langgraph.graph import StateGraph, END
+import os
+from typing import Annotated, TypedDict
+from langchain_groq import ChatGroq  # <--- Switched to Groq
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 
-# 1. Define the Shared State
-class AgentState(TypedDict):
-    # 'add_messages' allows the graph to append new messages rather than overwriting
-    messages: Annotated[List[BaseMessage], add_messages]
-    next_node: str
-    confidence: float
-    ticket_id: str
+# Define State
+class State(TypedDict):
+    messages: Annotated[list, add_messages]
 
-# 2. Define the Nodes
-def supervisor_node(state: AgentState):
-    """The brain: Decides where to go based on ticket content."""
-    llm = ChatOpenAI(model="gpt-4o", temperature=0)
-    
-    # Logic to classify and route
-    last_message = state["messages"][-1].content
-    
-    # In a real app, use structured output (Pydantic) for this decision
-    if "urgent" in last_message.lower() or "security" in last_message.lower():
-        return {"next_node": "human_review"}
-    return {"next_node": "retriever_agent"}
-
-def retriever_node(state: AgentState):
-    """Worker: Fetches data from ChromaDB."""
-    # This is where your vector search logic lives
-    query = state["messages"][-1].content
-    # Simulated search result
-    context = "Solution: Reset VPN settings in the IAM portal."
-    
-    return {
-        "messages": [HumanMessage(content=f"Found Solution: {context}", name="Retriever")],
-        "confidence": 0.85
-    }
-
-def human_review_node(state: AgentState):
-    """Wait for manual approval for high-risk tickets."""
-    return {"messages": [HumanMessage(content="Pending human approval for high-risk task.", name="Human")]}
-
-# 3. Build the Graph
-workflow = StateGraph(AgentState)
-
-# Add our nodes
-workflow.add_node("supervisor", supervisor_node)
-workflow.add_node("retriever_agent", retriever_node)
-workflow.add_node("human_review", human_review_node)
-
-# 4. Define the Logic (Edges)
-workflow.set_entry_point("supervisor")
-
-# Conditional routing from supervisor
-workflow.add_conditional_edges(
-    "supervisor",
-    lambda x: x["next_node"],
-    {
-        "retriever_agent": "retriever_agent",
-        "human_review": "human_review"
-    }
+# Load Free Groq LLM (No OpenAI needed!)
+# You can use 'llama-3.3-70b-versatile' or 'llama3-8b-8192'
+llm = ChatGroq(
+    model="llama-3.3-70b-versatile",
+    temperature=0,
+    groq_api_key=os.getenv("GROQ_API_KEY")
 )
 
-# After retrieval, go to end (or you could route back to supervisor)
-workflow.add_edge("retriever_agent", END)
-workflow.add_edge("human_review", END)
+def chatbot(state: State):
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    
+    if os.path.exists("faiss_index"):
+        # allow_dangerous_deserialization is required for loading local FAISS files
+        vectorstore = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+        retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
+        
+        user_input = state["messages"][-1].content
+        docs = retriever.invoke(user_input)
+        context = "\n".join([d.page_content for d in docs])
+        
+        system_prompt = (
+            "You are a professional ITSM Assistant. Use the provided context "
+            "from the incident database to answer accurately.\n\n"
+            f"Context:\n{context}"
+        )
+        messages = [{"role": "system", "content": system_prompt}] + state["messages"]
+        response = llm.invoke(messages)
+    else:
+        response = llm.invoke(state["messages"])
+        
+    return {"messages": [response]}
 
-# 5. Compile the Graph
-app = workflow.compile()
+# Build Graph
+graph_builder = StateGraph(State)
+graph_builder.add_node("chatbot", chatbot)
+graph_builder.add_edge(START, "chatbot")
+graph_builder.add_edge("chatbot", END)
+
+app = graph_builder.compile()

@@ -1,22 +1,30 @@
-import re
-import pandas as pd
-from langchain_community.document_loaders import DataFrameLoader
+import os
+from langchain_community.document_loaders import CSVLoader
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 
-def clean_incident_text(text):
-    if pd.isna(text): return ""
-    text = text.lower()
-    # Remove ticket metadata like [RE: Ticket #...]
-    text = re.sub(r'\[.*?\]', '', text)
-    # Remove special characters
-    text = re.sub(r'[^a-zA-Z0-9\s]', '', text)
-    return text.strip()
+def run_ingestion():
+    """Loads CSV data and creates a FAISS vector database."""
+    data_path = "data/incidents_advanced.csv"
+    save_path = "faiss_index"
 
-def load_preprocessed_incidents():
-    df = pd.read_csv('data/incidents_advanced.csv')
+    if not os.path.exists(data_path):
+        print(f"❌ Error: {data_path} not found.")
+        return
+
+    print("📂 Loading ITSM data...")
+    loader = CSVLoader(data_path)
+    documents = loader.load()
+
+    print("🧠 Generating HuggingFace Embeddings (Local)...")
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+    print("⚡ Building FAISS Index...")
+    vectorstore = FAISS.from_documents(documents, embeddings)
     
-    # Pre-processing steps
-    df['description'] = df['description'].apply(clean_incident_text)
-    df['content'] = df['title'] + " " + df['description'] + " Category: " + df['category']
-    
-    loader = DataFrameLoader(df, page_content_column="content")
-    return loader.load()
+    # Save locally
+    vectorstore.save_local(save_path)
+    print(f"✅ FAISS index saved to '{save_path}'")
+
+if __name__ == "__main__":
+    run_ingestion()

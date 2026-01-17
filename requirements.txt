@@ -4,6 +4,8 @@ langchain-openai
 langchain-community
 langchain-huggingface
 langgraph
+faiss-cpu
+python-dotenv
 
 # Vector DB & Embeddings
 chromadb
