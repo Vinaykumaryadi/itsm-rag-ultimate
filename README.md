@@ -71,24 +71,26 @@ Standard RAG often fails when users provide vague queries. By using **LangGraph*
 git clone [https://github.com/Vinaykumaryadi/itsm-rag-ultimate.git](https://github.com/Vinaykumaryadi/itsm-rag-ultimate.git)
 cd itsm-rag-ultimate
 
-Step 2: Install Dependencies
-Bash
-
+### **Step 2: Install Dependencies**
+```bash
 pip install -r requirements.txt
-Step 3: Environment Configuration
+
+### **Step 3: Environment Configuration**
 Create a .env file in the root directory and add your API keys:
 
 Code snippet
 
 GROQ_API_KEY=your_gsk_key_here
 OPENAI_API_KEY=your_openai_key_here
-Step 4: Initialize and Run
+
+### **Step 4: Initialize and Run**
 Simply run the main entry point. The system will automatically build the FAISS vector index on the first run:
 
 Bash
 
 python main.py
-Step 5: Launch Advanced Interfaces (Optional)
+
+### **Step 5: Launch Advanced Interfaces (Optional)**
 To view the FastAPI docs or the Streamlit Human-in-the-Loop UI:
 
 Bash
@@ -98,13 +100,6 @@ uvicorn api.fastapi_app:app --reload
 
 # Start UI
 streamlit run ui/streamlit_hitl.py
-MIT License | © 2026 Vinay Kumar
+MIT License | © 2026 Vinay Kumar Yadi
 
 
-### 📤 Final Push to GitHub
-After saving this into your `README.md`, run:
-1. `git add README.md`
-2. `git commit -m "docs: finalized readme with full setup instructions"`
-3. `git push origin main`
-
-**Would you like me to help you draft a LinkedIn post to share this project now that the GitHub is fully
