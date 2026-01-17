@@ -4,6 +4,21 @@
 
 This project demonstrates a sophisticated multi-agent approach to resolving IT tickets. Unlike standard linear RAG pipelines, this system uses an **Agentic Workflow** to analyze incident data, perform semantic search across historical logs, and provide grounded resolutions for complex IT issues.
 
+#### 🏗️ Architecture Overview
+```mermaid
+graph LR
+    A[User Query] --> B{LangGraph Agent}
+    B --> C[(FAISS Tickets)]
+    C --> D[Sentiment & Metadata]
+    D --> E{Self-Correction}
+    E -->|Refine| B
+    E -->|Finalize| F[Groq + Llama 3.3]
+    F --> G[Cited Answer]
+
+    style B fill:#f96,stroke:#333
+    style F fill:#69f,stroke:#333
+```
+
 ---
 
 ## 🏗️ System Architecture
