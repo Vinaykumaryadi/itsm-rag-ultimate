@@ -1,8 +1,8 @@
-# 🚀 Agentic RAG for ITSM Automation
+# 🚀 Agentic RAG for ITSM Automation: Multi-Agent Support Engine
 
-**A production-grade IT Service Management (ITSM) automation engine using LangGraph, FastAPI, and ChromaDB.**
+**A production-grade IT Service Management (ITSM) automation engine using LangGraph, FAISS, and High-Performance Inference.**
 
-This project demonstrates a sophisticated multi-agent approach to resolving IT tickets. Unlike standard linear RAG pipelines, this system uses a **Supervisor Agent** to analyze risk and route tickets between **Automated Resolution**, **Semantic Search**, and **Human-in-the-Loop (HITL)** oversight.
+This project demonstrates a sophisticated multi-agent approach to resolving IT tickets. Unlike standard linear RAG pipelines, this system uses an **Agentic Workflow** to analyze incident data, perform semantic search across historical logs, and provide grounded resolutions for complex IT issues.
 
 ---
 
@@ -11,17 +11,19 @@ This project demonstrates a sophisticated multi-agent approach to resolving IT t
 ![System Workflow](docs/plots/preprocessing_impact.png)
 
 ### 1. Data Engineering & EDA
-* **Automated Cleaning:** Custom pipeline to strip noise (RE: tags, HTML, headers) from messy human-written tickets.
-* **Exploratory Analysis:** Statistical profiling of ticket distributions and resolution bottlenecks.
+* **Automated Cleaning:** Custom pipeline to strip noise from messy human-written tickets (RE: tags, HTML, headers).
+* **Statistical Profiling:** Automated generation of category distributions and resolution trends to identify bottlenecks.
+* **Vector Ingestion:** Efficient processing of CSV data into a semantic search engine.
 
 ### 2. Hybrid Retrieval Engine
-* **Vector Store:** ChromaDB utilizing `all-MiniLM-L6-v2` embeddings for deep semantic understanding.
-* **Metadata Filtering:** Enhanced retrieval narrowed by ticket category to reduce search space.
+* **Vector Store:** **FAISS** index optimized for high-speed local retrieval.
+* **Embeddings:** `all-MiniLM-L6-v2` via **HuggingFace**, ensuring deep semantic understanding without external API costs.
+* **Context Augmentation:** Dynamic retrieval that injects historical Incident IDs and resolution metrics into the LLM prompt.
 
 ### 3. Agentic Orchestration (LangGraph)
-* **The Supervisor:** Acts as the "Brain," classifying incoming tickets by risk. 
-* **Retriever Agent:** Executes vector search and synthesizes a solution using RAG.
-* **Human-in-the-Loop Node:** A safety-first node that intercepts high-priority requests.
+* **The Brain:** Powered by **Llama 3.3 (via Groq)** for near-instant reasoning.
+* **State Management:** Uses LangGraph to maintain conversation memory and allow the agent to ask follow-up questions.
+* **Self-Correction:** The agent analyzes the retrieved context and self-corrects if the search result doesn't match the specific user error code.
 
 ![Category Distribution](docs/plots/category_dist.png)
 
@@ -32,12 +34,12 @@ This project demonstrates a sophisticated multi-agent approach to resolving IT t
 | Category | Technology |
 | :--- | :--- |
 | **Orchestration** | **LangChain, LangGraph** |
-| **LLMs** | **OpenAI GPT-4o / Claude 3.5** |
-| **Vector DB** | **ChromaDB** |
+| **LLMs** | **Llama 3.3 70B (Groq) / GPT-4o** |
+| **Vector DB** | **FAISS (Local Index)** |
+| **Embeddings** | **HuggingFace (Local Transformers)** |
 | **Data Science** | **Pandas, Matplotlib, Seaborn** |
 | **Backend** | **FastAPI** |
 | **Frontend** | **Streamlit** |
-| **Observability** | **MLflow** |
 
 ---
 
@@ -45,29 +47,64 @@ This project demonstrates a sophisticated multi-agent approach to resolving IT t
 
 ![Resolution Trends](docs/plots/resolution_trends.png)
 
-We utilize **MLflow** to track the lifecycle of every agentic decision:
-* **Confidence Scores:** Monitored to prevent "hallucinated" resolutions.
-* **Latency Tracking:** Measuring the overhead of multi-agent reasoning.
-* **Resolution Trends:** Visualized via Seaborn to identify common "unresolvable" clusters.
+We utilize a data-driven approach to track agent performance:
+* **Data Grounding:** Every response is cross-referenced against real historical tickets (e.g., INC-1130, INC-1026).
+* **Sentiment Awareness:** The agent detects user frustration (Angry/Neutral) from the metadata to adjust its response tone.
+* **Latency Benchmarking:** Utilizing Groq to achieve sub-second response times for complex RAG tasks.
 
 ---
 
 ## 🛡️ Technical Challenges & Decisions
 
-### **Why LangGraph instead of a simple Chain?**
-Standard chains are linear. In ITSM, we need **cycles**. LangGraph allows the agent to loop and self-correct if the first retrieval is insufficient.
+### **Why FAISS + HuggingFace?**
+To ensure the project is cost-effective and portable. By running embeddings locally, we eliminate data transmission costs and privacy concerns associated with sending raw text to third-party providers.
 
-### **Ensuring Safety (HITL)**
-Any ticket tagged as **"Security"** or **"Critical"** bypasses automation entirely and is routed to a human, ensuring 0% automation risk for mission-critical infrastructure.
+### **Moving from Linear to Agentic**
+Standard RAG often fails when users provide vague queries. By using **LangGraph**, our agent can pause, ask for an error code, and then re-query the database once it has more information—mimicking a real IT support technician.
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Install:** `pip install -r requirements.txt`
-2. **Setup Data:** `python generate_all.py && python research/eda_report.py`
-3. **Run API:** `uvicorn api.fastapi_app:app --reload`
-4. **Run UI:** `streamlit run ui/streamlit_hitl.py`
+### **Step 1: Clone the Repository**
+```bash
+git clone [https://github.com/Vinaykumaryadi/itsm-rag-ultimate.git](https://github.com/Vinaykumaryadi/itsm-rag-ultimate.git)
+cd itsm-rag-ultimate
 
----
+Step 2: Install Dependencies
+Bash
+
+pip install -r requirements.txt
+Step 3: Environment Configuration
+Create a .env file in the root directory and add your API keys:
+
+Code snippet
+
+GROQ_API_KEY=your_gsk_key_here
+OPENAI_API_KEY=your_openai_key_here
+Step 4: Initialize and Run
+Simply run the main entry point. The system will automatically build the FAISS vector index on the first run:
+
+Bash
+
+python main.py
+Step 5: Launch Advanced Interfaces (Optional)
+To view the FastAPI docs or the Streamlit Human-in-the-Loop UI:
+
+Bash
+
+# Start API
+uvicorn api.fastapi_app:app --reload
+
+# Start UI
+streamlit run ui/streamlit_hitl.py
 MIT License | © 2026 Vinay Kumar
+
+
+### 📤 Final Push to GitHub
+After saving this into your `README.md`, run:
+1. `git add README.md`
+2. `git commit -m "docs: finalized readme with full setup instructions"`
+3. `git push origin main`
+
+**Would you like me to help you draft a LinkedIn post to share this project now that the GitHub is fully
