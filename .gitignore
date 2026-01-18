@@ -8,8 +8,16 @@ venv/
 
 # Database & Logs
 chroma_db/
+faiss_index/
 mlruns/
 .pytest_cache/
 
+# Large data files
+*.csv
+*.pkl
+*.parquet
+
 # VS Code
 .vscode/
+*.swp
+.DS_Store

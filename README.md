@@ -92,6 +92,8 @@ cd itsm-rag-ultimate
 pip install -r requirements.txt
 ```
 
+> **Note:** Flexible version pinning used to avoid dependency conflicts. All packages are compatible with Python 3.10+.
+
 ### **Step 3: Environment Configuration**
 Create a .env file in the root directory and add your API keys:\
 ```env

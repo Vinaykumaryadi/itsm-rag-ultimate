@@ -3,8 +3,17 @@ from langchain_community.document_loaders import CSVLoader
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
+def load_incidents(path='data/incidents_advanced.csv'):
+    """Load CSV incident data and return as LangChain Document objects."""
+    if not os.path.exists(path):
+        print(f"❌ Error: {path} not found.")
+        return []
+    
+    loader = CSVLoader(path)
+    return loader.load()
+
 def run_ingestion():
-    """Loads CSV data and creates a FAISS vector database."""
+    """Execute data ingestion pipeline: CSV -> Embeddings -> FAISS Index."""
     data_path = "data/incidents_advanced.csv"
     save_path = "faiss_index"
 
@@ -13,8 +22,7 @@ def run_ingestion():
         return
 
     print("📂 Loading ITSM data...")
-    loader = CSVLoader(data_path)
-    documents = loader.load()
+    documents = load_incidents(data_path)
 
     print("🧠 Generating HuggingFace Embeddings (Local)...")
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
@@ -22,7 +30,7 @@ def run_ingestion():
     print("⚡ Building FAISS Index...")
     vectorstore = FAISS.from_documents(documents, embeddings)
     
-    # Save locally
+    # Persist FAISS index locally for fast retrieval
     vectorstore.save_local(save_path)
     print(f"✅ FAISS index saved to '{save_path}'")
 

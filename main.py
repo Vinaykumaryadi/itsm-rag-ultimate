@@ -2,10 +2,10 @@ import os
 import sys
 from dotenv import load_dotenv
 
-# Load API Keys
+# Load environment variables (API keys, Groq API key, etc.)
 load_dotenv()
 
-# Add 'src' to path so we can import our modules
+# Add 'src' directory to Python path for relative imports
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 try:
@@ -16,19 +16,20 @@ except ImportError as e:
     sys.exit(1)
 
 def main():
-    # 1. Run ingestion if FAISS index is missing
+    # Initialize FAISS vector index if it doesn't exist
     if not os.path.exists("faiss_index"):
         print("🕵️ FAISS index not found. Initializing...")
         run_ingestion()
 
     print("\n🤖 ITSM Agent Ready. (Type 'exit' to quit)")
     
+    # Main conversation loop
     while True:
         user_input = input("\nUser: ")
         if user_input.lower() in ["exit", "quit"]:
             break
 
-        # Run the LangGraph app
+        # Stream the user query through the LangGraph workflow
         events = app.stream({"messages": [("user", user_input)]})
         for event in events:
             for value in event.values():

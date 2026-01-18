@@ -1,39 +1,47 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from src.ingestion.loaders import load_incidents
-from src.retrieval.vector_store import build_store
-from src.workflows.langgraph_flow import app as graph_app
-from langchain_core.messages import HumanMessage
+from dotenv import load_dotenv
+import os
 
+# Load environment variables (Groq API key, etc.)
+load_dotenv()
+
+from langchain_core.messages import HumanMessage
+from src.workflows.langgraph_flow import app as graph_app
+
+# Initialize FastAPI application
 app = FastAPI(title="ITSM RAG Ultimate API")
 
-# Global state for the vector store
+# Global state for vector store (lazy-loaded on first request)
 vector_db = None
 
 @app.on_event("startup")
 async def startup_event():
+    """Initialize API on startup (FAISS index loaded on first query)."""
     global vector_db
-    print("Initializing Vector Database...")
-    docs = load_incidents()
-    vector_db = build_store(docs)
+    print("Initializing API...")
+    # Vector DB is lazy-loaded on first ticket processing in langgraph_flow
+    print("✅ API Ready")
 
 class TicketRequest(BaseModel):
+    """Request schema for ticket processing."""
     ticket_id: str
     description: str
 
 @app.post("/process_ticket")
 async def process_ticket(request: TicketRequest):
+    """Process IT ticket through RAG-based agentic workflow."""
     try:
-        # Initialize LangGraph state
+        # Prepare LangGraph state with user query and ticket ID
         initial_state = {
             "messages": [HumanMessage(content=request.description)],
             "ticket_id": request.ticket_id
         }
         
-        # Execute Workflow
+        # Execute the LangGraph workflow (retrieval + LLM response)
         result = graph_app.invoke(initial_state)
         
-        # Extract the last message (the resolution or status)
+        # Extract the assistant's response from the final message
         final_msg = result["messages"][-1].content
         
         return {
